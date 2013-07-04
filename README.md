@@ -7,7 +7,7 @@ Note on Mongo
 ---------------
 I'm using [MongoHQ] (http://www.mongohq.com "Mongo HQ") to host my development databases since Meteor has problems setting up the DB in an NFS shared folder.
 
-To have Meteor connect to the MongoHQ database set the ```MONGO_URL``` environment variable to the appropriate MongoHQ URI.
+To have Meteor connect to the MongoHQ database, set the ```MONGO_URL``` environment variable to the appropriate MongoHQ URI.
 
 Microscope
 ---------------

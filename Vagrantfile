@@ -6,7 +6,6 @@ Vagrant.configure("2") do |config|
   config.vm.network :forwarded_port, guest: 3000, host: 3000
   config.vm.network :private_network, ip: "33.33.33.10"
   config.berkshelf.enabled = true
-  config.ssh.forward_agent
 
   config.vm.provision "chef_solo" do |chef|
     chef.add_recipe "omnibus_updater"
