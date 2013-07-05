@@ -4,6 +4,12 @@ Posts.allow({
 	update: ownsDocument,
 	remove: ownsDocument
 });
+Posts.deny({
+	update: function(userId, post, fieldNames) {
+		// may only edit the following two fields
+		return (_.without(fieldNames, "url", "title").length > 0);
+	}
+});
 
 Meteor.methods({
 	post: function(postAttributes) {
@@ -24,21 +30,11 @@ Meteor.methods({
 
 		// pick out whitelisted keys
 		var post = _.extend(_.pick(postAttributes, "url"), {
-			title: postAttributes.title + (this.isSimulation ? "(client)" : "(server)"),
+			title: postAttributes.title,
 			userId: user._id,
-			author: user.username,
+			author: user.emails[0].address,
 			submitted: new Date().getTime()
 		});
-
-		// wait for 5 seconds
-		if (! this.isSimulation) {
-			var Future = Npm.require("fibers/future");
-			var future = new Future();
-			Meteor.setTimeout(function() {
-				future.ret();
-			}, 5 * 1000);
-			future.wait();
-		}
 
 		var postId = Posts.insert(post);
 
