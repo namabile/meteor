@@ -6,11 +6,14 @@ Template.postItem.helpers({
 	},
 	ownPost: function() {
 		return this.userId == Meteor.userId();
+	},
+	upvotedClass: function() {
+		return Meteor.userId() && !_.include(this.upvoters, Meteor.userId()) ? "btn-primary upvoteable" : "disabled";
 	}
 });
 
 Template.postItem.events({
-	"click .upvote": function (e) {
+	"click .upvoteable": function (e) {
 		e.preventDefault();
 		Meteor.call("upvote", this._id, function(error) {
 			if(error)

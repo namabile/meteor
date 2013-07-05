@@ -1,6 +1,6 @@
 Template.postsList.helpers({
   posts: function() {
-  	return Posts.find({}, {sort: {submitted: -1}, limit: postsHandle.limit()});
+  	return Posts.find({}, {sort: {votes: -1}, limit: postsHandle.limit()});
   },
   postsReady: function() {
   	return ! postsHandle.loading();
