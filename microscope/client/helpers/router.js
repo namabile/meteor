@@ -7,3 +7,14 @@ Meteor.Router.add({
 	"/about": "about",
 	"/submit": "postSubmit"
 });
+
+Meteor.Router.filters({
+	'requireLogin': function(page) {
+		if(Meteor.user())
+			return page;
+		else
+			return "accessDenied";
+	}
+});
+
+Meteor.Router.filter("requireLogin", {only: "postSubmit"});
