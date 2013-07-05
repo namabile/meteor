@@ -1,18 +1,36 @@
 Template.postsList.helpers({
   posts: function() {
-  	return Posts.find({}, {sort: {votes: -1}, limit: postsHandle.limit()});
+  	return Posts.find({}, {sort: this.sort, limit: this.handle.limit()});
   },
   postsReady: function() {
-  	return ! postsHandle.loading();
+  	return ! this.handle.loading();
   },
   allPostsLoaded: function() {
-  	return ! postsHandle.loading() && Posts.find().count() < postsHandle.loaded();
+  	return ! this.handle.loading() && Posts.find().count() < this.handle.loaded();
+  }
+});
+
+Template.newPosts.helpers({
+  options: function () { 
+    return {
+      sort: {submitted: -1},
+      handle: newPostsHandle
+    };
+  }
+});
+
+Template.bestPosts.helpers({
+  options: function () {
+    return {
+      sort: {votes: -1, submitted: -1},
+      handle: bestPostsHandle
+    };
   }
 });
 
 Template.postsList.events({
 	"click .load-more": function (e) {
 		e.preventDefault();
-		postsHandle.loadNextPage();
+		this.handle.loadNextPage();
 	}
 });
