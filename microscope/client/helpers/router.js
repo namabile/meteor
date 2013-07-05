@@ -22,7 +22,7 @@ Meteor.Router.filters({
 			return "accessDenied";
 	},
 	'clearErrors': function(page) {
-		Meteor.Errors.clear;
+		Meteor.Errors.clear();
 		return page;
 	}
 });
