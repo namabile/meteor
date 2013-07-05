@@ -3,8 +3,11 @@
 </head>
 <body>
 	<div class="container">
-		<header class="navbar">
-			<div class="navbar-inner"><a href="{{postsListPath}}" class="brand">Microscope</a></div>
+		<header class="navbar clearfix">
+			<div class="navbar-inner">
+				<a href="{{postsListPath}}" class="brand">Microscope</a>
+				<a class="pull-right" style="padding:10px 20px 10px;" href="{{aboutPath}}">About</a>
+			</div>
 		</header>
 		<div id="main" class="row-fluid">
 			{{renderPage}}
