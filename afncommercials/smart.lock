@@ -5,7 +5,8 @@
       "router": {},
       "spin": {},
       "errors": {},
-      "accounts-ui-bootstrap-dropdown": {}
+      "accounts-ui-bootstrap-dropdown": {},
+      "holder": {}
     },
     "packages": {
       "router": {
@@ -27,6 +28,11 @@
         "git": "https://github.com/erobit/meteor-accounts-ui-bootstrap-dropdown.git",
         "tag": "v0.1.5",
         "commit": "e12b128f140caa2797720cbd5fae084de7810c6a"
+      },
+      "holder": {
+        "git": "https://github.com/Dsyko/meteor-holder",
+        "tag": "v0.1.9",
+        "commit": "081a706bc39ed7b5bd8a115c8fc480378e2cb81d"
       },
       "page-js-ie-support": {
         "git": "https://github.com/tmeasday/meteor-page-js-ie-support.git",
