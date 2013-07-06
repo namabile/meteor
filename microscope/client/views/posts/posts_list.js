@@ -58,6 +58,9 @@ Template.postItem.rendered = function () {
     // calculate the difference between old and new position and send the element there
     var delta = previousPosition - newPosition;
     $this.css("top", delta + "px");
+  } else {
+    // it's the first even render, so hide element
+    $this.addClass("invisible");
   }
 
   // let meteor draw in the old position
@@ -65,6 +68,6 @@ Template.postItem.rendered = function () {
     instance.currentPosition = newPosition;
 
     // bring element back to its new original position
-    $this.css("top", "0px");
+    $this.css("top", "0px").removeClass("invisible");
   });
 };
