@@ -4,7 +4,8 @@
     "basePackages": {
       "router": {},
       "spin": {},
-      "errors": {}
+      "errors": {},
+      "accounts-ui-bootstrap-dropdown": {}
     },
     "packages": {
       "router": {
@@ -21,6 +22,11 @@
         "git": "https://github.com/tmeasday/meteor-errors.git",
         "tag": "v0.1.0",
         "commit": "b91859cd98d69f5b294d7d7a2724427872103da8"
+      },
+      "accounts-ui-bootstrap-dropdown": {
+        "git": "https://github.com/erobit/meteor-accounts-ui-bootstrap-dropdown.git",
+        "tag": "v0.1.5",
+        "commit": "e12b128f140caa2797720cbd5fae084de7810c6a"
       },
       "page-js-ie-support": {
         "git": "https://github.com/tmeasday/meteor-page-js-ie-support.git",
