@@ -6,7 +6,8 @@
       "spin": {},
       "errors": {},
       "accounts-ui-bootstrap-dropdown": {},
-      "holder": {}
+      "holder": {},
+      "flash-messages": {}
     },
     "packages": {
       "router": {
@@ -33,6 +34,11 @@
         "git": "https://github.com/Dsyko/meteor-holder",
         "tag": "v0.1.9",
         "commit": "081a706bc39ed7b5bd8a115c8fc480378e2cb81d"
+      },
+      "flash-messages": {
+        "git": "https://github.com/camilosw/flash-messages.git",
+        "tag": "v0.1.3.1",
+        "commit": "b4b02b1a21789b7d19350410e2f98d66a872a683"
       },
       "page-js-ie-support": {
         "git": "https://github.com/tmeasday/meteor-page-js-ie-support.git",

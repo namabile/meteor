@@ -4,6 +4,7 @@
     "spin": {},
     "errors": {},
     "accounts-ui-bootstrap-dropdown": {},
-    "holder": {}
+    "holder": {},
+    "flash-messages": {}
   }
 }
