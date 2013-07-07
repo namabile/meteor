@@ -1,8 +1,7 @@
 <template name="index">
-	<ul class="thumbnails">
-		<li class="span8"><a href="#" class="thumbnail"><img data-src="holder.js/640x360" alt=""></a></li>
-		<li class="span4"><a href="#" class="thumbnail"><img data-src="holder.js/160x100" alt=""></a></li>
-		<li class="span4"><a href="#" class="thumbnail"><img data-src="holder.js/160x100" alt=""></a></li>
-		<li class="span4"><a href="#" class="thumbnail"><img data-src="holder.js/160x100" alt=""></a></li>
+	<ul>
+	{{#each videos}}
+		<li>{{description}}, submitted on {{submittedOn}}, {{views}} views</li>
+	{{/each}}
 	</ul>
 </template>

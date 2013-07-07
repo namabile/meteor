@@ -37,11 +37,21 @@ Meteor.methods({
 		if(otherVideo)
 			throw new Meteor.Error(422, "This video has already been posted", youtubeId);
 
+		// get video meta data from Youtube
+		var meta = Meteor.http.get("http://gdata.youtube.com/feeds/api/videos/" + youtubeId, {
+			params: {
+				v: 2,
+				alt: "json"
+			}
+		});
+		
 		video = _.extend(_.pick(video, "description"), {
 			url: video.url,
 			youtubeId: youtubeId,
 			submittedBy: user._id,
 			submittedOn: new Date().getTime(),
+			title: meta.data.entry.title["$t"],
+			thumbnail: meta.data.entry["media$group"]["media$thumbnail"],
 			comments: 0,
 			likes: 0,
 			views: 0,
