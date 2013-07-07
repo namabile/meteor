@@ -1,7 +1,10 @@
 <template name="header">
 	<header class="navbar">
 		<div class="navbar-inner">
-			<a href="{{homePath}}" class="brand">AFN Commercials</a>
+			<a href="{{indexPath}}" class="brand">AFN Commercials</a>
+			<ul class="nav">
+				<li class="{{activeNavClass 'submitVideo'}}"><a href="{{submitVideoPath}}">Submit Video</a></li>
+			</ul>
 			<ul class="nav pull-right">
 				{{#if currentUser}}
 					{{> loggedin}}

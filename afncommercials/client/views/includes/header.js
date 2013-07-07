@@ -1,3 +1,15 @@
+Template.header.helpers({
+	activeNavClass: function () {
+		var args = Array.prototype.slice.call(arguments, 0);
+		args.pop();
+		var active = _.any(args, function(name) {
+			return name === Meteor.Router.page();
+		});
+
+		return active && "active";
+	}
+});
+
 Template.loggedout.events({
 	"click #login": function(e) {
 		e.preventDefault();

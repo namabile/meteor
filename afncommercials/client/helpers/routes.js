@@ -1,3 +1,4 @@
 Meteor.Router.add({
-	"/": "index"
+	"/": "index",
+	"/submit-video" : "submitVideo"
 });
