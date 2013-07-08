@@ -19,7 +19,7 @@ Template.submitVideo.events({
 				Meteor.Messages.sendError(error.reason);
 			} else {
 				Meteor.Messages.sendSuccess("Succesfully posted video!");
-				Meteor.Router.to("submitVideoPath");
+				Meteor.Router.to("submitVideo");
 			}
 		});
 	}
